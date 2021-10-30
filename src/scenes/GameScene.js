@@ -1,8 +1,8 @@
 import Phaser from "phaser";
 
 let background;
-let player;
 let ermine;
+let boom;
 
 class GameScene extends Phaser.Scene {
     constructor(test) {
@@ -24,6 +24,8 @@ class GameScene extends Phaser.Scene {
 
         this.load.spritesheet('ermine', 'src/image/objectClass/playerErmine.png',
             { frameWidth: 500, frameHeight: 300 });
+        this.load.spritesheet('boom', 'src/image/Boom.png',
+            { frameWidth: 105, frameHeight: 99 });
 
 
     }
@@ -39,18 +41,32 @@ class GameScene extends Phaser.Scene {
         background = this.add.tileSprite(0, 0, 1280, 720, 'bg');
         background.setOrigin(0, 0);
 
-        player = this.physics.add.sprite(100, 450, 'ermine');
-        player.setScale(0.5);
+        ermine = this.physics.add.sprite(100, 450, 'ermine');
+        ermine.setScale(0.4);
 
-        ermine = this.anims.create({ 
+        boom = this.physics.add.sprite(300, 450, 'boom');
+        boom.setScale(1);
+
+        this.anims.create({ 
             key: 'ermineAni', 
             frames: this.anims.generateFrameNumbers('ermine', { 
                 start: 0, 
                 end: 2 
             }),
-            duration: 500, 
+            duration: 400, 
             framerate: 0,
             repeat: -1 
+        })
+
+        this.anims.create({ 
+            key: 'boomAni', 
+            frames: this.anims.generateFrameNumbers('boom', { 
+                start: 0, 
+                end: 24 
+            }),
+            duration: 1000, 
+            framerate: 0,
+            repeat: 0
         })
 
         // ball = this.physics.add.group();
@@ -63,7 +79,8 @@ class GameScene extends Phaser.Scene {
 
     update(delta, time) {
         background.tilePositionX += 2;
-        player.anims.play('ermineAni', true);
+        ermine.anims.play('ermineAni', true);
+        boom.anims.play('boomAni', true);
     }
 }
 export default GameScene;
