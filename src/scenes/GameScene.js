@@ -1,7 +1,7 @@
 import Phaser from "phaser";
 
 let background;
-let player;
+let ermine;
 
 class GameScene extends Phaser.Scene {
     constructor(test) {
@@ -11,23 +11,25 @@ class GameScene extends Phaser.Scene {
     }
 
     preload() {
-        // load image
-        this.load.image('bg','src/image/objectClass/backGround.png');
-        // load spritesheet
-        this.load.spritesheet('player','src/image/objectClass/playerErmine.png',
-                                        {frameWidth:500,frameHeight:300});
-        // load tileSprite
-        
+        this.load.image('bg', 'src/image/objectClass/backGround.png');
+        this.load.spritesheet('ermine', 'src/image/objectClass/playerErmine.png',
+            { frameWidth: 500, frameHeight: 300 });
     }
 
     create() {
-        // create image object (background)
-        // background = this.add.image(150,150,'bg').setScale(1.75);
-        // create sprite object (player)
-        player = this.add.sprite(200,200,'player');
-        player.setScale(0.5);
-        // create tileSprite
-        background = this.add.tileSprite(0,0,450,720,'bg').setOrigin(0,0);
+        background = this.add.tileSprite(0, 0, 850, 1400, 'bg').setOrigin(0, 0);
+        ermine = this.physics.add.sprite(200, 500, 'ermine').setScale(0.5);
+
+        this.anims.create({
+            key: 'ermineAni',
+            frames: this.anims.generateFrameNumbers('ermine',{
+                start:0,
+                end:2
+            }),
+            duration: 1000,
+            repeat:5
+        })
+        ermine.anims.play('ermineAni',true);
     }
 
     update(delta, time) {
