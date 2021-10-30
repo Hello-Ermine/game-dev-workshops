@@ -14,7 +14,7 @@ class GameScene extends Phaser.Scene {
         // this.load.image('bg', 'src/image/tileSprite.png');
         // this.load.image('player', 'src/image/playermeow.jpg');
         this.load.image('bg', 'src/image/objectClass/backGround.png');
-        this.load.spritasheet('ermine', 'src/image/objectClass/playerErmine.png',
+        this.load.spritesheet('ermine', 'src/image/objectClass/playerErmine.png',
                                             {frameWidth:500,frameHeight:300});
 
     }
@@ -25,9 +25,9 @@ class GameScene extends Phaser.Scene {
         //bg.setScale(2);
         // player = this.add.sprite(220,350,'player');
         // player.setScale(0.5);
-        background = this.add.tileSprite(0,0,450, 150, 'bg').setScale(1.75).setDepth(2);;
+        bg = this.add.tileSprite(0,0,450, 150, 'bg').setScale(1.75).setDepth(2);;
         ermine = this.physics.add.sprite(200,200,'player');
-        ermine.setScale(0.5).setDepth(5);;
+        ermine.setScale(0.5).setDepth(5);
 
         this.anims.create({
             key: 'ermineAni',
