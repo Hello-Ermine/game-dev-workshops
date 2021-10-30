@@ -41,11 +41,11 @@ class GameScene extends Phaser.Scene {
         background = this.add.tileSprite(0, 0, 1280, 720, 'bg');
         background.setOrigin(0, 0);
 
-        ermine = this.physics.add.sprite(100, 450, 'ermine');
+        ermine = this.physics.add.sprite(300, 500, 'ermine');
         ermine.setScale(0.4);
 
-        boom = this.physics.add.sprite(300, 450, 'boom');
-        boom.setScale(1);
+        boom = this.physics.add.sprite(100, 450, 'boom');
+        boom.setScale(3);
 
         this.anims.create({ 
             key: 'ermineAni', 
@@ -62,12 +62,15 @@ class GameScene extends Phaser.Scene {
             key: 'boomAni', 
             frames: this.anims.generateFrameNumbers('boom', { 
                 start: 0, 
-                end: 24 
+                end: 23
             }),
             duration: 1500, 
             framerate: 0,
-            repeat: 0
+            repeat: -1
         })
+
+        ermine.anims.play('ermineAni', true);
+        boom.anims.play('boomAni', true);
 
         // ball = this.physics.add.group();
         // ball.create(250, 250, 'football').setScale(0.1);
@@ -79,8 +82,6 @@ class GameScene extends Phaser.Scene {
 
     update(delta, time) {
         background.tilePositionX += 2;
-        ermine.anims.play('ermineAni', true);
-        boom.anims.play('boomAni', true);
     }
 }
 export default GameScene;
