@@ -64,7 +64,7 @@ class GameScene extends Phaser.Scene {
                 start: 0, 
                 end: 24 
             }),
-            duration: 1000, 
+            duration: 1500, 
             framerate: 0,
             repeat: 0
         })
