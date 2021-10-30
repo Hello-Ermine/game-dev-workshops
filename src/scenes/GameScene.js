@@ -27,13 +27,14 @@ class GameScene extends Phaser.Scene {
         // player = this.add.sprite(220,350,'player');
         // player.setScale(0.5);
 
-        background = this.add.image(150, 150, 'bg').setScale(1.75);
+        background = this.add.tileSprite(0,0,450, 150, 'bg').setScale(1.75);
         player = this.add.sprite(200,200,'player');
         player.setScale(0.25);
     }
 
     update(delta, time) {
         // bg.tilePositionY -= 1;
+        background.tilePositionX -=5;
     }
 }
 export default GameScene;
