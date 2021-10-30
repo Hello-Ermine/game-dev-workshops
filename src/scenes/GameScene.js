@@ -34,12 +34,11 @@ class GameScene extends Phaser.Scene {
         // create tileSprite
         // background = this.add.tileSprite(0,0,450,720,'bg').setOrigin(0,0);
         // create group obj
-        ball = this.physics.add.group().setScale(0.25);
+        ball = this.physics.add.group();
         ball.create(250,250,'football');
         ball.create(300,300,'basket');
         ball.create(200,200,'volley');
         ball.create(350,350,'takraw');
-
     }
 
     update(delta, time) {
