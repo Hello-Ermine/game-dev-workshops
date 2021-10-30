@@ -25,7 +25,7 @@ class GameScene extends Phaser.Scene {
         //bg.setScale(2);
         // player = this.add.sprite(220,350,'player');
         // player.setScale(0.5);
-        bg = this.add.tileSprite(0,0,450, 150, 'bg').setScale(1.75).setDepth(2);;
+        bg = this.add.tileSprite(250,300,600, 800, 'bg').setScale(0.90).setDepth(2);;
         ermine = this.physics.add.sprite(200,200,'player');
         ermine.setScale(0.5).setDepth(5);
 
@@ -40,8 +40,8 @@ class GameScene extends Phaser.Scene {
         })
     }
     update(delta, time) {
-        // bg.tilePositionY -= 1;
-        //background.tilePositionX -=5;
+         bg.tilePositionX += 1;
+        
 
         ermine.anims.play('ermineAni', true);
 
