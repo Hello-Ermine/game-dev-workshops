@@ -22,7 +22,6 @@ class GameScene extends Phaser.Scene {
 
         player = this.add.sprite(226, 350, 'player');
         player.setScale(0.2);
-        
     }
 
     update(delta, time) {
