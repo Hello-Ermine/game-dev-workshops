@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 
-let bg,player,ball;
+let bg,player,playerboy;
 
 class GameScene extends Phaser.Scene {
     constructor(test) {
@@ -10,30 +10,16 @@ class GameScene extends Phaser.Scene {
     }
 
     preload() {
-        /* this.load.image('bg', 'src/image/tileSprite.png');
-         this.load.image('player', 'src/image/Pika.png'); */
-
-        this.load.image('football', 'src/image/objectClass/football.png');
-        this.load.image('basketball', 'src/image/objectClass/basketball.png');
-        this.load.image('snowball', 'src/image/objectClass/snowball.png');
-        this.load.image('takraw', 'src/image/objectClass/Takraw.png');
-        this.load.image('volleyball', 'src/image/objectClass/volleyball.png');
-
         this.load.image('bg', 'src/image/objectClass/backGround.png');
         this.load.spritesheet('player', 'src/image/objectClass/playerErmine.png',{ frameWidth: 500, frameHeight: 300 });
+        this.load.spritesheet('playerboy', 'src/image/playerBoy.png',{ frameWidth: 15, frameHeight: 21 });
     }
 
-    create() {
-        /* bg = this.add.tileSprite(0,0,450,720,'bg');
-         bg.setOrigin(0,0);
-         bg.setScale(2);
-         player = this.add.sprite(225,620,'player');
-         player.setScale(0.15); */
-        
+    create() {  
         bg = this.add.tileSprite(0,0,450,720,'bg').setDepth(1);
         bg.setOrigin(0,0);
 
-        player = this.physics.add.sprite(100,500,'player').setDepth(10);
+        player = this.physics.add.sprite(60,500,'player').setDepth(10);
         player.setScale(0.35);
         this.anims.create({
             key: 'erminerun',
@@ -41,23 +27,26 @@ class GameScene extends Phaser.Scene {
                 start: 0,
                 end: 2
             }),
-            duration: 100,
+            duration: 90,
+            framerate: 0,
+            repeat: -1 })
+        
+        playerboy = this.physics.add.sprite(80,420,'playerboy').setDepth(10);
+        playerboy.setScale(4);
+        this.anims.create({
+            key: 'boyrun',
+            frames: this.anims.generateFrameNumbers('playerboy', {
+                start: 0,
+                end: 8
+            }),
+            duration: 200,
             framerate: 0,
             repeat: -1 })
         }
-
-        /*ball = this.physics.add.group();
-            ball.create(200,200,'football');
-            ball.create(200,200,'basketball');
-            ball.create(200,200,'snowball');
-            ball.create(200,200,'takraw');
-            ball.create(200,200,'volleyball');
-            ball.setScale(1);*/
-    
-
     update(delta, time) {
-        bg.tilePositionX += 10;
+        bg.tilePositionX += 12;
         player.anims.play('erminerun', true);
+        playerboy.anims.play('boyrun', true);
     }
 }
 export default GameScene;
