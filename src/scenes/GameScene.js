@@ -26,8 +26,6 @@ class GameScene extends Phaser.Scene {
             { frameWidth: 500, frameHeight: 300 });
         this.load.spritesheet('boom', 'src/image/Boom.png',
             { frameWidth: 105, frameHeight: 99 });
-
-
     }
 
     create() {
