@@ -15,7 +15,7 @@ const config = {
         default: 'arcade',
         arcade: {
             debug:true
-        }
+        }   
     },
     scene: [
         GameScene
