@@ -1,48 +1,41 @@
 import Phaser from "phaser";
 
 let background;
-let player;
-let ball;
+let ermine;
 
 class GameScene extends Phaser.Scene {
-   constructor(test) {
-       super({
-           key: 'GameScene'
-       });
-   }
+    constructor(test) {
+        super({
+            key: 'GameScene'
+        });
+    }
 
-   preload() {
-       // load image
-       this.load.image('bg','src/image/objectClass/backGround.png');
-       this.load.image('football','src/image/objectClass/football.png');
-       this.load.image('basket','src/image/objectClass/basketball.png');
-       this.load.image('volley','src/image/objectClass/volleyball.png');
-       this.load.image('takraw','src/image/objectClass/Takraw.png');
-       // load spritesheet
-       // this.load.spritesheet('player','src/image/objectClass/playerErmine.png',
-       //                                 {frameWidth:500,frameHeight:300});
-       // load tileSprite
+    preload() {
+        this.load.image('bg','src/image/objectClass/backGround.png');
+        this.load.spritesheet('ermine', 'src/image/objectClass/playerErmine.png',
+            { frameWidth: 500, frameHeight: 300 });
+    }
 
-   }
+    create() {
+        background = this.add.tileSprite(0,0,450,720,'bg').setOrigin(0,0);
+        ermine = this.physics.add.sprite(220, 500, 'ermine').setScale(0.5);
 
-   create() {
-       // create image object (background)
-       // background = this.add.image(150,150,'bg').setScale(1.75);
-       // create sprite object (player)
-       // player = this.add.sprite(200,200,'player');
-       // player.setScale(0.5);
-       // create tileSprite
-       // background = this.add.tileSprite(0,0,450,720,'bg').setOrigin(0,0);
-       // create group obj
-       ball = this.physics.add.group();
-       ball.create(250,250,'football');
-       ball.create(300,300,'basket');
-       ball.create(200,200,'volley');
-       ball.create(350,350,'takraw');
-   }
+        this.anims.create({
+            key: 'ermineAni',
+            frames: this.anims.generateFrameNumbers('ermine',{
+                start: 0,
+                end: 7
+            }),
+            duration: 1000,
+            repeat:-1
+        })
+        ermine.anims.play('ermineAni',true);
 
-   update(delta, time) {
-       // background.tilePositionX += 2;
-   }
+    }
+
+    update(delta, time) {
+        background.tilePositionX += 2;
+
+    }
 }
 export default GameScene;
