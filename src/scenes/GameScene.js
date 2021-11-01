@@ -29,7 +29,7 @@ class GameScene extends Phaser.Scene {
                 start: 0,
                 end: 2
             }),
-            duration: 300,
+            duration: 400,
             repeat: -1
         })
 
@@ -37,7 +37,7 @@ class GameScene extends Phaser.Scene {
 
 
     update(delta, time) {
-        bg.tilePositionX += 20;
+        bg.tilePositionX += 10;
         ermine.anims.play('ermineAni', true);
 
     }
