@@ -1,6 +1,7 @@
 import 'phaser';
 import Phaser from 'phaser';
 import GameScene from './scenes/GameScene';
+import MainMenu from './scenes/MainMenu';
 
 
 const config = {
@@ -18,8 +19,9 @@ const config = {
         }   
     },
     scene: [
+        MainMenu,
         GameScene
-    ],
+    ],  
     
     
 };
