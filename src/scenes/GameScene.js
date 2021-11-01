@@ -1,7 +1,6 @@
 import Phaser from "phaser";
 
-let bg;
-let player;
+
 
 class GameScene extends Phaser.Scene {
     constructor(test) {
