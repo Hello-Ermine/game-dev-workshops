@@ -20,7 +20,7 @@ class GameScene extends Phaser.Scene {
     }
 
     create() {
-        //bg = this.add.tileSprite(0,0,450,720,'bg');
+        //bg = this.add.image(450,720,'bg');
         //bg.setOrigin(0,0);
         //bg.setScale(2);
         // player = this.add.sprite(220,350,'player');
