@@ -26,6 +26,7 @@ class GameScene extends Phaser.Scene {
         //bg.setScale(2);
         // player = this.add.sprite(220,350,'player');
         // player.setScale(0.5);
+        cursor = this.input.keyboard.createCursorKeys(),
         bg = this.add.tileSprite(250,300,600, 800, 'bg').setScale(0.90).setDepth(2);;
         ermine = this.physics.add.sprite(200,500,'ermine');
         ermine.setScale(0.5).setDepth(5);
@@ -36,23 +37,13 @@ class GameScene extends Phaser.Scene {
                start: 0,
                end: 2
            }),
-            duration: 400,
+            duration: 1000,
             repeat: -1
+})
+ }
+   
 
-
-    //this.input.on('pointermove', (pointer)=>{
-     //           ermine.x = pointer.x
-          //      ermine.y = pointer.y  //ตั้งให้ตำแหน่งตัวละครไปตามเมาส์ของเรา
-        //    })
-    //    }     
-
-   cursor = this.input.keyboard.createCursorKeys();
-
-       
-
-
-     })
-   }
+  
   update(delta, time) {
         bg.tilePositionX += 1;
        ermine.anims.play('ermineAni', true);
