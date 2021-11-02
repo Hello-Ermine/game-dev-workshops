@@ -1,27 +1,42 @@
+import Phaser from "phaser";
 
 
-let play;
+let buttonPlay;
 
-class MainMenu extends Phaser.Scene {  
+
+class MainMenu extends Phaser.Scene {
     constructor(test) {
         super({
-            key: 'MainMenu'  
+            key: 'MainMenu'
         });
     }
+
     preload() {
+
         this.load.image('play', 'src/image/input/play.png');
-        
+
     }
+
     create() {
-        play.on('pointerup',()=>{
-            this.scene.start('GameScene')  
-            menusound.stop()  
+       //สร้างปุ่ม
+       buttonPlay = this.add.image(250,300, 'play').setScale(0.2);
+
+       buttonPlay.setInteractive();
+
+
+
+       buttonPlay.on('pointerup', ()=>{
+
+           this.scene.start('GameScene');
+
+       })
+
         
     }
-    
-    
-    update() {
+    update(delta, time) {
         
+        
+
     }
 }
-export default MainMenu; 
+export default MainMenu;
