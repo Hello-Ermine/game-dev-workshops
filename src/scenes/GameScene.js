@@ -29,7 +29,7 @@ class GameScene extends Phaser.Scene {
         cursor = this.input.keyboard.createCursorKeys(),
         bg = this.add.tileSprite(250,300,600, 800, 'bg').setScale(0.90).setDepth(2);;
         ermine = this.physics.add.sprite(200,500,'ermine');
-        ermine.setScale(0.5).setDepth(5);
+        ermine.setScale(0.5).setDepth(5).setCollideWorldBounds(true)
 
        this.anims.create({
            key: 'ermineAni',
@@ -45,7 +45,7 @@ class GameScene extends Phaser.Scene {
 
   
   update(delta, time) {
-        bg.tilePositionX += 1;
+        bg.tilePositionX += 2;
        ermine.anims.play('ermineAni', true);
 
         if(cursor.up.isDown){
