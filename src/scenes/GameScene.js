@@ -2,6 +2,7 @@ import Phaser from "phaser";
 
 let background;
 let ermine;
+let meow;
 
 let keyW;
 let keyA;
@@ -29,6 +30,8 @@ class GameScene extends Phaser.Scene {
 
         this.load.spritesheet('ermine', 'src/image/objectClass/playerErmine.png',
             { frameWidth: 500, frameHeight: 300 });
+
+        this.load.image('meow', 'src/image/Mr.B.jpg');
     }
 
     create() {
@@ -44,6 +47,8 @@ class GameScene extends Phaser.Scene {
 
         ermine = this.physics.add.sprite(300, 500, 'ermine');
         ermine.setScale(0.4);
+        
+        ermine.setCollideWorldBounds(true)  
 
         this.anims.create({
             key: 'ermineAni',
