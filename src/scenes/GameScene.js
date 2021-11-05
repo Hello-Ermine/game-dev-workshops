@@ -27,7 +27,7 @@ class GameScene extends Phaser.Scene {
         // player = this.add.sprite(220,350,'player');
         // player.setScale(0.5);
         cursor = this.input.keyboard.createCursorKeys(),
-        bg = this.add.tileSprite(250,300,600, 800, 'bg').setScale(0.90).setDepth(2);;
+        bg = this.add.tileSprite(250,300,650, 700, 'bg').setScale(0.90).setDepth(2);;
         ermine = this.physics.add.sprite(200,500,'ermine');
         ermine.setScale(0.5).setDepth(5).setCollideWorldBounds(true)
 

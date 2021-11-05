@@ -1,6 +1,5 @@
 import Phaser from "phaser";
 
-
 let buttonPlay;
 
 
@@ -18,8 +17,8 @@ class MainMenu extends Phaser.Scene {
     }
 
     create() {
-       //สร้างปุ่ม
-       buttonPlay = this.add.image(250,300, 'play').setScale(0.2);
+    
+       buttonPlay = this.add.image(250,300, 'play').setScale(2);
 
        buttonPlay.setInteractive();
 
