@@ -18,7 +18,7 @@ class MainMenu extends Phaser.Scene {
 
     create() {
     
-       buttonPlay = this.add.image(250,300, 'play').setScale(2);
+       buttonPlay = this.add.image(250,300, 'play').setScale(0.5);
 
        buttonPlay.setInteractive();
 
@@ -29,6 +29,11 @@ class MainMenu extends Phaser.Scene {
            this.scene.start('GameScene');
 
        })
+
+        buttonPlay.on('pointerover', ()=>{
+        setScale(1);
+
+    })
 
         
     }

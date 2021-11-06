@@ -40,6 +40,9 @@ class GameScene extends Phaser.Scene {
             duration: 1000,
             repeat: -1
 })
+
+
+        
  }
    
 
