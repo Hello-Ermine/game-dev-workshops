@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 
 let spawn;
+let spawnGroup;
 let R;
 let S;
 let bulletGroup;
@@ -60,6 +61,40 @@ class GameScene extends Phaser.Scene {
 
                 });
                 spaeBar=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
+                S=this.physics.add.image(700,300,'S').setImmovable();
+
+          spawnGroup=this.physics.add.group();
+
+              spawn=this.time.addEvent({
+
+                        delay:1000,
+
+                        callback: function(){
+
+                                  R=this.physics.add.image(Phaser.Math.Between(300,500),Phaser.Math.Between(300,500),'R');
+
+                                  spawnGroup.add(R);
+
+                                  spawnGroup.setVelocityX(200);
+
+                                  this.physics.add.collider(S,R,(S,R)=>{
+
+                                            R.destroy();
+
+                                        });
+
+                        },
+
+                        callbackScope:this,
+
+                        loop:true,
+
+                        pause:false
+
+              });
+
+              spcaeBar=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
     }
 
 
@@ -84,6 +119,12 @@ class GameScene extends Phaser.Scene {
             });
 
   }
+       for(let i=0;i<spawnGroup.getChildren().length;i++){
+         if(spawnGroup.getChildren()[i].x>900){
+          spawnGroup.getChildren()[i].destroy();
+        }
+
+       }
     }
 
 }
