@@ -37,12 +37,12 @@ class Event extends Phaser.Scene {
  
     S=this.physics.add.image(700,300,'S').setImmovable();
     bulletGruop=this.physics.add.group();
-    spawn=this.time.addEvent({​​​
-    delay:2000,
-    callback:function(){​​​
-    bullet=this.physics.add.image(S.x,S.y,'bullet');
-    bulletGruop.add(bullet);
-    bulletGruop.setVelocityX(-200);
+        spawn=this.time.addEvent({​​​
+        delay:2000,
+        callback:function(){​​​
+            bullet=this.physics.add.image(S.x,S.y,'bullet');
+            bulletGruop.add(bullet);
+            bulletGruop.setVelocityX(-200);
     //     this.physics.add.collider(bullet,R,(bullet,R)=>{​​​
     //               R.destroy();
     //               bullet.destroy();
