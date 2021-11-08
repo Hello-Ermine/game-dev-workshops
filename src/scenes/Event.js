@@ -4,12 +4,13 @@ let S;
 let R;
 let spawn;
 let spawnGroup;
-
+let bullet;
+let bulletGruop;
 
 class Event extends Phaser.Scene {
     constructor(test) {
         super({
-            key: 'Time_event'
+            key: 'Event'
         });
     }
 
@@ -21,18 +22,37 @@ class Event extends Phaser.Scene {
 
     create() {
 
-      S = this.physics.add.image(800, 300, "S");
-      spawnGroup = this.physics.add.group();
-      spawn = this.time.addEvent({
-          delay: 2000,
-          callback: function () {
-              R = this.physics.add.image(400, 300, "R");
-              spawnGroup.add(R);
-              spawnGroup.setVelocityX(200);
-          },
-          callbackScope: this,
-          loop: true,
-      });
+    //   S = this.physics.add.image(800, 300, "S");
+    //   spawnGroup = this.physics.add.group();
+    //   spawn = this.time.addEvent({
+    //       delay: 2000,
+    //       callback: function () {
+    //           R = this.physics.add.image(400, 300, "R");
+    //           spawnGroup.add(R);
+    //           spawnGroup.setVelocityX(200);
+    //       },
+    //       callbackScope: this,
+    //       loop: true,
+    //   });
+ 
+    S=this.physics.add.image(700,300,'S').setImmovable();
+    bulletGruop=this.physics.add.group();
+    spawn=this.time.addEvent({​​​
+    delay:2000,
+    callback:function(){​​​
+    bullet=this.physics.add.image(S.x,S.y,'bullet');
+    bulletGruop.add(bullet);
+    bulletGruop.setVelocityX(-200);
+    //     this.physics.add.collider(bullet,R,(bullet,R)=>{​​​
+    //               R.destroy();
+    //               bullet.destroy();
+    //     }​​​);
+                            }​​​,
+    callbackScope:this,
+    loop:true
+                }​​​);
+    spcaeBar=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+   
   }
 
   update(delta, time) {
@@ -44,6 +64,7 @@ class Event extends Phaser.Scene {
   }
 }
 
-        
+   
+
     
 export default Event;
