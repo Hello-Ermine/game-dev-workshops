@@ -38,7 +38,8 @@ class GameScene extends Phaser.Scene {
         // // bg.setScale(1.75);
 
         bg = this.add.tileSprite(0,0,450,720,'bg').setOrigin(0,0);
-        meow = this.add.image(200,100,'meow').setScale(0.25);
+        meow = this.physics.add.image(200,100,'meow').setScale(0.25);
+        meow.setVelocityY = 2;
         
 
 
@@ -48,6 +49,7 @@ class GameScene extends Phaser.Scene {
         //create sprite object (player)
          ermine = this.physics.add.sprite(200,200,'ermine').setScale(0.25);
          this.anims.create({
+             
 
             key: 'ermineAni',
 
