@@ -20,7 +20,8 @@ const config = {
     },
     scene: [
         MainMenu,
-        GameScene
+        GameScene,
+        Time_event
         
     ],
     
