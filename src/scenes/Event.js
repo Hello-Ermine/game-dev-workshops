@@ -17,7 +17,7 @@ class Event extends Phaser.Scene {
     preload() {
         this.load.image('R', 'src/image/Rapid.png');
         this.load.image('S', 'src/image/Separate.png');
-        this.load.image('bullet', 'src/image/Bullet.png');
+        this.load.image('bullet', 'src/image/Bulle.png');
     }
 
     create() {
@@ -37,6 +37,7 @@ class Event extends Phaser.Scene {
  
     S=this.physics.add.image(700,300,'S').setImmovable();
     bulletGruop=this.physics.add.group();
+<<<<<<< HEAD
 //HEAD
         spawn=this.time.addEvent({​​​
         delay:2000,
@@ -44,6 +45,14 @@ class Event extends Phaser.Scene {
             bullet=this.physics.add.image(S.x,S.y,'bullet');
             bulletGruop.add(bullet);
             bulletGruop.setVelocityX(-200);
+=======
+    spawn=this.time.addEvent({​​​
+    delay:2000,
+    callback:function(){​​​
+    bullet=this.physics.add.image(S.x,S.y,'bullet');
+    bulletGruop.add(bullet);
+    bulletGruop.setVelocityX(-200);
+>>>>>>> parent of c19863d (Fix Error by P'Fight)
     //     this.physics.add.collider(bullet,R,(bullet,R)=>{​​​
     //               R.destroy();
     //               bullet.destroy();
@@ -52,6 +61,7 @@ class Event extends Phaser.Scene {
     callbackScope:this,
     loop:true
                 }​​​);
+<<<<<<< HEAD
 //
     spawn=this.time.addEvent({
         delay:2000,
@@ -64,6 +74,8 @@ class Event extends Phaser.Scene {
         loop:true
     });
 // c19863de77002ce0eddee7731de0578a4fc6ac3d
+=======
+>>>>>>> parent of c19863d (Fix Error by P'Fight)
     spcaeBar=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
    
   }
