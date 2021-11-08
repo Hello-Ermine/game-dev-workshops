@@ -2,6 +2,7 @@ import 'phaser';
 import Phaser from 'phaser';
 import GameScene from './scenes/GameScene';
 import MainMenu from './scenes/MainMenu';
+import Event from './scenes/Event';
 
 
 
@@ -11,8 +12,8 @@ const config = {
     pixelArt: true,
     roundPixels: true,
     parent: 'content',
-    width: 450,
-    height: 720,
+    width: 800,
+    height: 600,
     physics: {
         default: 'arcade',
         arcade: {
@@ -20,6 +21,7 @@ const config = {
         }
     },
     scene: [
+        Event,
         MainMenu,
         GameScene
     ],
