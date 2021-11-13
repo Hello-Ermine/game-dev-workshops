@@ -25,7 +25,7 @@ class Event extends Phaser.Scene {
         // spawn = this.time.addEvent({
         //    delay: 2000,
         //    callback: function(){
-                    // bullet = this.physics.add.image(S.x, S.y, 'bullet');
+                    // bullet = this.physics.add.image(S.x, S.y, 'bullet'); สุ่ม Phaser.Math.Between(300,500)
                     // bulletGruop.add(bullet);
                     // bulletGruop.setVelocityX(-200);
         //     //    this.physics.add.collider(bullet,R,(bullet,R)=>{
@@ -43,7 +43,7 @@ class Event extends Phaser.Scene {
     update(delta, time) {
 
         // if(spaceBar.isDown){
-        //     bullet=this.physics.add.image(S.x,S.y,'bullet').setScale(0.5);
+        //     bullet=this.physics.add.image(S.x,S.y,'bullet').setScale(0.5);   
         //     bulletGruop.add(bullet);
         //     bulletGruop.setVelocityX(-200);
         //     this.physics.add.collider(bullet,R,(bullet,R)=>{
