@@ -16,8 +16,8 @@ class GameScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('bg','../image/tileSprite.png');
-        this.load.image('player', '../image/playermeow.jpg');
+        this.load.image('bg','src/image/tileSprite.png');
+        this.load.image('player', 'src/image/playermeow.jpg');
        
 
     }
@@ -28,7 +28,7 @@ class GameScene extends Phaser.Scene {
         bg.setScale(2);
 
         player = this.physics.add.sprite(450,600,'player');
-        player.setScale(0.5);
+        player.setScale(0.25);
 
         // this.input.on('pointermove', (pointer)=>{
         //     player.x = pointer.x
