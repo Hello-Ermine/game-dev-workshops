@@ -16,8 +16,8 @@ class GameScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('bg','../src/image/tileSprite.png');
-        this.load.image('player', '../src/image/playermeow.jpg');
+        this.load.image('bg','C:\Users\User\Desktop\game-dev-workshops\src\image\tileSprite.png');
+        this.load.image('player', 'C:\Users\User\Desktop\game-dev-workshops\src\image\playermeow.jpg');
        
 
     }
