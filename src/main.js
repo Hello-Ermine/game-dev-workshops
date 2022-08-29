@@ -1,7 +1,7 @@
 import 'phaser';
 import Phaser from 'phaser';
 import GameScene from './scenes/GameScene';
-
+import MainMenu from './scenes/MainMenu';
 
 const config = {
     // For more settings see <https://github.com/photonstorm/phaser/blob/master/src/boot/Config.js>
@@ -18,6 +18,7 @@ const config = {
         }
     },
     scene: [
+        MainMenu, // เพิ่ม Scene ที่เราทำการสร้างขึ้นมา
         GameScene
     ],
     
@@ -25,3 +26,4 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
+
