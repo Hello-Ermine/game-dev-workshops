@@ -11,11 +11,11 @@ const config = {
     roundPixels: true,
     parent: 'content',
     width: 450,
-    height: 720,
+    height: 700,
     physics: {
         default: 'arcade',
         arcade: {
-            debug:true
+            debug:false
         }
     },
     scene: [
